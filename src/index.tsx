@@ -1,7 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { App } from './app';
+import '@unocss/reset/tailwind-compat.css';
+import 'uno.css';
 
 document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render((<App />), document.getElementById('reactMountPoint'));
+  const container = document.getElementById('reactMountPoint');
+  const root = createRoot(container);
+  root.render(<App />);
 });
